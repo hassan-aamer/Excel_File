@@ -17,6 +17,15 @@
     <!-- breadcrumb -->
 @endsection
 @section('content')
+
+    @if (session()->has('Add'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>{{ session()->get('Add') }}</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    @endif
     <!-- row -->
     <div class="row">
         <div class="col-md-12 mb-30">
@@ -46,11 +55,11 @@
                                             <td>{{ $user->Email }}</td>
                                             <td>{{ $user->Phone }}</td>
                                             <td>
-                                                <a href="{{ route('userExcel.edit',$user->id) }}" class="btn btn-info btn-sm" role="button"
-                                                    aria-pressed="true"><i class="fa fa-edit"></i></a>
-                                                <a href="{{ url('destroy',$user->id) }}" type="button" class="btn btn-danger btn-sm" 
-                                                    ><i
-                                                    class="fa fa-trash"></i></a>
+                                                <a href="{{ route('userExcel.edit', $user->id) }}"
+                                                    class="btn btn-info btn-sm" role="button" aria-pressed="true"><i
+                                                        class="fa fa-edit"></i></a>
+                                                <a href="{{ url('destroy', $user->id) }}" type="button"
+                                                    class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
                                             </td>
                                         </tr>
                                     @endforeach
