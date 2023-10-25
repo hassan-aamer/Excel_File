@@ -34,7 +34,7 @@
                     <div class="card-body">
 
                         <a href="{{ route('userExcel.create') }}" class="btn btn-success btn-sm">Add User</a>
-                        <a href="" class="btn btn-info btn-sm">Excel Export</a><br><br>
+                        <a href="{{ route('users_export') }}" class="btn btn-info btn-sm">Excel Export</a><br><br>
 
                         <div class="table-responsive">
                             <table id="datatable" class="table  table-hover table-sm table-bordered p-0"
@@ -60,10 +60,10 @@
                                             <td>{{ $user->Email }}</td>
                                             <td>{{ $user->Phone }}</td>
                                             <td>
-                                                <a href="{{ route('userExcel.edit', $user->id) }}"
+                                                <a href=""
                                                     class="btn btn-info btn-sm" role="button" aria-pressed="true"><i
                                                         class="fa fa-edit"></i></a>
-                                                <a href="{{ url('destroy', $user->id) }}" type="button"
+                                                <a href="" type="button"
                                                     class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
                                             </td>
                                         </tr>

@@ -16,5 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('Pages.create');
 });
+
 Route::resource('userExcel', \App\Http\Controllers\UserExcelController::class);
-Route::get('destroy/{id}', '\App\Http\Controllers\UserExcelController@destroy')->name('destroy');
+Route::get('users_export', [App\Http\Controllers\UserExcelController::class, 'export'])->name('users_export');

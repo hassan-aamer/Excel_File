@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\UsersExport;
 use App\Models\UserExcel;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class UserExcelController extends Controller
 {
@@ -63,5 +65,10 @@ class UserExcelController extends Controller
         UserExcel::findorFail($id)->delete();
         session()->flash('Add', 'تم حدف المستخدم بنجاح');
         return redirect()->route('userExcel.index');
+    }
+
+    public function export() 
+    {
+        return Excel::download(new UsersExport, 'users.xlsx');
     }
 }
