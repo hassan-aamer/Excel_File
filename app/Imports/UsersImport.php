@@ -15,9 +15,9 @@ class UsersImport implements ToModel
     public function model(array $row)
     {
         return new UserExcel([
-            'Name'     => $row['Name'],
-            'Email'    => $row['Email'],
-            'Phone'    => $row['Phone'],
+            'Name'     => $row[1],
+            'Email'    => $row[2],
+            'Phone'    => $row[3],
         ]);
     }
 }
