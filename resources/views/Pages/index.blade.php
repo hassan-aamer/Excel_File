@@ -33,7 +33,8 @@
                 <div class="card-body">
                     <div class="card-body">
 
-                        <a href="{{ route('userExcel.create') }}" class="btn btn-success btn-sm">Add User</a><br><br>
+                        <a href="{{ route('userExcel.create') }}" class="btn btn-success btn-sm">Add User</a>
+                        <a href="" class="btn btn-info btn-sm">Excel Export</a><br><br>
 
                         <div class="table-responsive">
                             <table id="datatable" class="table  table-hover table-sm table-bordered p-0"
