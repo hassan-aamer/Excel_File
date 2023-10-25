@@ -68,15 +68,15 @@ class UserExcelController extends Controller
         return redirect()->route('userExcel.index');
     }
 
-    public function export() 
+    public function export()
     {
         return Excel::download(new UsersExport, 'users.xlsx');
     }
 
-    public function import() 
+    public function import()
     {
-        Excel::import(new UsersImport, request()->file('file'));
-        session()->flash('Add', 'تم رفع الملف بنجاح');
-        return back();
+            Excel::import(new UsersImport,request()->file('file'));
+            session()->flash('Add', 'تم رفع الملف بنجاح');
+            return back();
     }
 }

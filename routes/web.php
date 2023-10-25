@@ -21,6 +21,6 @@ Route::get('/', function () {
 Route::resource('userExcel', UserExcelController::class);
 Route::controller(UserExcelController::class)->group(function(){
     Route::get('users_export', 'export')->name('users_export');
-    Route::get('users_import', 'import')->name('users_import');
+    Route::post('users_import', 'import')->name('users_import');
 });
 

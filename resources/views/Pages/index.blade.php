@@ -46,22 +46,18 @@
                                 data-page-length="50" style="text-align: center">
                                 <thead>
                                     <tr>
-                                        <th>#</th>
-                                        <th>Name</th>
                                         <th>ID</th>
+                                        <th>Name</th>
                                         <th>Email</th>
                                         <th>Phone</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php $i = 0; ?>
                                     @foreach ($users as $user)
-                                        <?php $i++; ?>
                                         <tr>
-                                            <td>{{ $i }}</td>
-                                            <td>{{ $user->Name }}</td>
                                             <td>{{ $user->id }}</td>
+                                            <td>{{ $user->Name }}</td>
                                             <td>{{ $user->Email }}</td>
                                             <td>{{ $user->Phone }}</td>
                                             <td>
