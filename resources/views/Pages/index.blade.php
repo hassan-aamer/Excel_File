@@ -34,7 +34,22 @@
                     <div class="card-body">
 
                         <a href="{{ route('userExcel.create') }}" class="btn btn-success btn-sm">Add User</a>&nbsp;&nbsp;&nbsp;
-                        <a href="{{ route('users_export') }}" class="btn btn-info btn-sm">Excel Export</a><br><br>
+                        <a href="{{ route('users_export') }}" class="btn btn-info btn-sm">Excel Export</a>
+                        
+                        <br><br>
+
+                        <form action="" method="POST">
+                            @csrf
+                            <div class="form-row">
+                                <div class="form-floating">
+                                    <label for="file">Excel Import</label>
+                                    <input type="file" name="file" class="form-control"><br>
+                                    <button class="btn btn-warning btn-sm nextBtn btn-lg pull-left"type="submit">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <br><br>
 
                         <div class="table-responsive">
                             <table id="datatable" class="table  table-hover table-sm table-bordered p-0"
