@@ -88,7 +88,7 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <!-- add_form -->
-                    <form action="" method="POST">
+                    <form action="{{ route('users_import') }}" method="POST">
                         @csrf
                         <div class="row">
                             <div class="col">
