@@ -12,6 +12,12 @@ class UsersExport implements FromCollection
     */
     public function collection()
     {
-        return UserExcel::all();
+        // return UserExcel::all();
+        return UserExcel::select([
+            'id',
+            'Name',
+            'Email',
+            'Phone',
+        ])->get();
     }
 }
