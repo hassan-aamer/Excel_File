@@ -33,22 +33,12 @@
                 <div class="card-body">
                     <div class="card-body">
 
-                        <a href="{{ route('userExcel.create') }}" class="btn btn-success btn-sm">Add User</a>&nbsp;&nbsp;&nbsp;
-                        <a href="{{ route('users_export') }}" class="btn btn-info btn-sm">Excel Export</a>
-                        
-                        <br><br>
-
-                        <form action="" method="POST">
-                            @csrf
-                            <div class="form-row">
-                                <div class="form-floating">
-                                    <label for="file">Excel Import</label>
-                                    <input type="file" name="file" class="form-control"><br>
-                                    <button class="btn btn-warning btn-sm nextBtn btn-lg pull-left"type="submit">Submit</button>
-                                </div>
-                            </div>
-                        </form>
-
+                        <a href="{{ route('userExcel.create') }}" class="btn btn-success x-small">Add
+                            User</a>&nbsp;&nbsp;&nbsp;
+                        <a href="{{ route('users_export') }}" class="btn btn-info x-small">Excel
+                            Export</a>&nbsp;&nbsp;&nbsp;
+                        <button type="button" class="btn btn-warning x-small" data-toggle="modal"
+                            data-target="#exampleModal">Excel Import</button>
                         <br><br>
 
                         <div class="table-responsive">
@@ -65,9 +55,9 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php $i =0; ?>
+                                    <?php $i = 0; ?>
                                     @foreach ($users as $user)
-                                    <?php $i++; ?>
+                                        <?php $i++; ?>
                                         <tr>
                                             <td>{{ $i }}</td>
                                             <td>{{ $user->Name }}</td>
@@ -75,11 +65,10 @@
                                             <td>{{ $user->Email }}</td>
                                             <td>{{ $user->Phone }}</td>
                                             <td>
-                                                <a href=""
-                                                    class="btn btn-info btn-sm" role="button" aria-pressed="true"><i
-                                                        class="fa fa-edit"></i></a>&nbsp;&nbsp;
-                                                <a href="" type="button"
-                                                    class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+                                                <a href="" class="btn btn-info btn-sm" role="button"
+                                                    aria-pressed="true"><i class="fa fa-edit"></i></a>&nbsp;&nbsp;
+                                                <a href="" type="button" class="btn btn-danger btn-sm"><i
+                                                        class="fa fa-trash"></i></a>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -91,7 +80,33 @@
         </div>
     </div>
     <!-- row closed -->
-@endsection
-@section('js')
 
-@endsection
+    <!-- Excel Import -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <!-- add_form -->
+                    <form action="" method="POST">
+                        @csrf
+                        <div class="row">
+                            <div class="col">
+                                <label for="File" class="mr-sm-2">Excel Import:</label>
+                                <input id="File" type="file" name="file" class="form-control" required>
+                            </div>
+                            <br><br>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-success">submit</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    @endsection
+    @section('js')
+
+    @endsection

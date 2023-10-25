@@ -45,7 +45,7 @@
                     <div class="col-xs-12">
                         <div class="col-md-12">
 
-                            <a href="{{ route('userExcel.index') }}" class="btn btn-success btn-sm" role="button"
+                            <a href="{{ route('userExcel.index') }}" class="btn btn-success x-small" role="button"
                                 aria-pressed="true">All Users</a><br><br>
 
                             <br>
@@ -66,7 +66,7 @@
                                     </div>
                                 </div>
                                 <br>
-                                <button class="btn btn-success btn-sm nextBtn btn-lg pull-right"
+                                <button class="btn btn-success x-small pull-right"
                                     type="submit">Submit</button>
                             </form>
                         </div>
