@@ -98,11 +98,11 @@
                             <button type="submit" class="btn btn-success">submit</button>
                         </div>
                     </form>
-
                 </div>
             </div>
         </div>
-    @endsection
-    @section('js')
+    </div>
+@endsection
+@section('js')
 
-    @endsection
+@endsection

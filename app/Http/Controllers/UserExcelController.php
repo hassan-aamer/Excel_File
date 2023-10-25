@@ -75,8 +75,8 @@ class UserExcelController extends Controller
 
     public function import()
     {
-            Excel::import(new UsersImport,request()->file('file'));
-            session()->flash('Add', 'تم رفع الملف بنجاح');
-            return back();
+        Excel::import(new UsersImport, request()->file('file'));
+        session()->flash('Add', 'تم رفع الملف بنجاح');
+        return back();
     }
 }
