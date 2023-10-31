@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\UserExcel;
 use App\Exports\UsersExport;
 use App\Imports\UsersImport;
-use App\Models\UserExcel;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
+use App\Http\Requests\UserExcelRequest;
 
 class UserExcelController extends Controller
 {
@@ -24,8 +25,9 @@ class UserExcelController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(UserExcelRequest $request)
     {
+        $validated = $request->validated();
         try {
             UserExcel::create(
                 $request->all()
@@ -46,8 +48,9 @@ class UserExcelController extends Controller
     }
 
 
-    public function update(Request $request, $id)
+    public function update(UserExcelRequest $request, $id)
     {
+        $validated = $request->validated();
         try {
             $Users = UserExcel::findorFail($id);
             $Users->update(
